@@ -9,16 +9,16 @@ description: |
           * I do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
           * Report snap-specific bugs to me.
           * I _DO_ use this snap. It _has passed ALL the provided tests_ on my system. I __do not__ track the latest version.
-          * Packaging 'style' : tarball build for linux machines.
+          * Packaging 'style' : binary for linux machines.
           * License refers to the original software, not the snapcraft 'code'.
           * More info:
           * Run the following to rename the snap
-            ```sudo snap alias rjd-shapeit.ligate-static ligate_static```
-            ```sudo snap alias rjd-shapeit.phase-common-static phase_common_static```
-            ```sudo snap alias rjd-shapeit.phase-rare-static phase_rare_static```
-            ```sudo snap alias rjd-shapeit.simulate-static simulate_static```
-            ```sudo snap alias rjd-shapeit.switch-static switch_static```
-            ```sudo snap alias rjd-shapeit.xcftools-static xcftools_static```
+            ```sudo snap alias rjd-shapeit.ligate ligate```
+            ```sudo snap alias rjd-shapeit.phase-common phase_common```
+            ```sudo snap alias rjd-shapeit.phase-rare phase_rare```
+            ```sudo snap alias rjd-shapeit.simulate simulate```
+            ```sudo snap alias rjd-shapeit.switch switch```
+            ```sudo snap alias rjd-shapeit.xcftools xcftools```
 
 contact: https://github.com/RJDan/shapeit_snap
 website: https://github.com/RJDan/shapeit_snap
@@ -29,34 +29,36 @@ base: core22 # the base snap is the execution environment for this snap
 grade: stable # stable, devel
 confinement: strict # strict, devmode, classic
 license:  MIT
+architectures:
+      - amd64
 
 apps:
-    ligate-static:
+    ligate:
         command: bin/ligate_static
         plugs:
           - home
           - removable-media
-    phase-common-static:
+    phase-common:
         command: bin/phase_common_static
         plugs:
           - home
           - removable-media
-    phase-rare-static:
+    phase-rare:
         command: bin/phase_rare_static
         plugs:
           - home
           - removable-media
-    simulate-static:
+    simulate:
         command: bin/simulate_static
         plugs:
           - home
           - removable-media
-    switch-static:
+    switch:
         command: bin/switch_static
         plugs:
           - home
           - removable-media
-    xcftools-static: 
+    xcftools: 
         command: bin/xcftools_static
         plugs:
           - home
