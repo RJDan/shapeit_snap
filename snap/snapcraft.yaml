@@ -1,0 +1,162 @@
+name: rjd-shapeit
+title: shapeit
+version: '5.1.1'
+summary:   Segmented HAPlotype Estimation and Imputation Tool
+description: |
+        "Segmented HAPlotype Estimation and Imputation Tool."
+          *  The description above refers to the software: https://github.com/odelaneau/shapeit5.git
+          * I have packaged the software as a snap for **personal use** but I have made the snap available for free.
+          * I do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
+          * Report snap-specific bugs to me.
+          * I _DO_ use this snap. It _has passed ALL the provided tests_ on my system. I __do not__ track the latest version.
+          * Packaging 'style' : tarball build for linux machines.
+          * License refers to the original software, not the snapcraft 'code'.
+          * More info:
+          * Run the following to rename the snap
+            ```sudo snap alias rjd-shapeit.ligate-static ligate_static```
+            ```sudo snap alias rjd-shapeit.phase-common-static phase_common_static```
+            ```sudo snap alias rjd-shapeit.phase-rare-static phase_rare_static```
+            ```sudo snap alias rjd-shapeit.simulate-static simulate_static```
+            ```sudo snap alias rjd-shapeit.switch-static switch_static```
+            ```sudo snap alias rjd-shapeit.xcftools-static xcftools_static```
+
+contact: https://github.com/RJDan/shapeit_snap
+website: https://github.com/RJDan/shapeit_snap
+source-code : https://github.com/RJDan/shapeit_snap
+#icon: Rlogo.png
+
+base: core22 # the base snap is the execution environment for this snap
+grade: stable # stable, devel
+confinement: strict # strict, devmode, classic
+license:  MIT
+
+apps:
+    ligate-static:
+        command: bin/ligate_static
+        plugs:
+          - home
+          - removable-media
+    phase-common-static:
+        command: bin/phase_common_static
+        plugs:
+          - home
+          - removable-media
+    phase-rare-static:
+        command: bin/phase_rare_static
+        plugs:
+          - home
+          - removable-media
+    simulate-static:
+        command: bin/simulate_static
+        plugs:
+          - home
+          - removable-media
+    switch-static:
+        command: bin/switch_static
+        plugs:
+          - home
+          - removable-media
+    xcftools-static: 
+        command: bin/xcftools_static
+        plugs:
+          - home
+          - removable-media
+
+parts:
+    ligate_static:
+        plugin: nil
+        build-packages:
+                - wget
+                - tree
+        override-pull: |
+                    wget https://github.com/odelaneau/shapeit5/releases/download/v5.1.1/ligate_static
+                    snapcraftctl pull
+        override-build: |
+                    mv ligate_static $SNAPCRAFT_PART_INSTALL
+                    chmod +x $SNAPCRAFT_PART_INSTALL/ligate_static
+                    snapcraftctl build
+        organize:
+            ligate_static : bin/
+        stage:
+            - bin
+        prime:
+            - bin
+    phase_common_static:
+        plugin: nil
+        override-pull: |
+                    wget https://github.com/odelaneau/shapeit5/releases/download/v5.1.1/phase_common_static
+                    snapcraftctl pull
+        override-build: |
+                    mv phase_common_static $SNAPCRAFT_PART_INSTALL
+                    chmod +x $SNAPCRAFT_PART_INSTALL/phase_common_static
+                    snapcraftctl build
+        organize:
+            phase_common_static : bin/
+        stage:
+            - bin
+        prime:
+            - bin
+    phase_rare_static:
+        plugin: nil
+        override-pull: |
+                    wget https://github.com/odelaneau/shapeit5/releases/download/v5.1.1/phase_rare_static
+                    snapcraftctl pull
+        override-build: |
+                    mv phase_rare_static $SNAPCRAFT_PART_INSTALL
+                    chmod +x $SNAPCRAFT_PART_INSTALL/phase_rare_static
+                    snapcraftctl build
+        organize:
+            phase_rare_static : bin/
+        stage:
+            - bin
+        prime:
+            - bin
+    simulate_static:
+        plugin: nil
+        override-pull: |
+                    wget https://github.com/odelaneau/shapeit5/releases/download/v5.1.1/simulate_static
+                    snapcraftctl pull
+        override-build: |
+                    mv simulate_static $SNAPCRAFT_PART_INSTALL
+                    chmod +x $SNAPCRAFT_PART_INSTALL/simulate_static
+                    snapcraftctl build
+        organize:
+            simulate_static : bin/
+        stage:
+            - bin
+        prime:
+            - bin
+    switch_static:
+        plugin: nil
+        override-pull: |
+                    wget https://github.com/odelaneau/shapeit5/releases/download/v5.1.1/switch_static
+                    snapcraftctl pull
+        override-build: |
+                    mv switch_static $SNAPCRAFT_PART_INSTALL
+                    chmod +x $SNAPCRAFT_PART_INSTALL/switch_static
+                    snapcraftctl build
+        organize:
+            switch_static : bin/
+        stage:
+            - bin
+        prime:
+            - bin
+    xcftools_static:
+        plugin: nil
+        override-pull: |
+                    wget https://github.com/odelaneau/shapeit5/releases/download/v5.1.1/xcftools_static
+                    snapcraftctl pull
+        override-build: |
+                    mv xcftools_static $SNAPCRAFT_PART_INSTALL
+                    chmod +x $SNAPCRAFT_PART_INSTALL/xcftools_static
+                    snapcraftctl build
+        organize:
+            xcftools_static : bin/
+        stage:
+            - bin
+        prime:
+            - bin
+
+#            "Icon_230417.svg" : snap/Icon_230417.svg
+#        build-packages:
+#        stage-packages:
