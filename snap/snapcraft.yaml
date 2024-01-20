@@ -1,24 +1,24 @@
 name: rjd-shapeit
-title: shapeit
+title: SHAPEIT
 version: '5.1.1'
 summary:   Segmented HAPlotype Estimation and Imputation Tool
 description: |
         "Segmented HAPlotype Estimation and Imputation Tool."
           *  The description above refers to the software: https://github.com/odelaneau/shapeit5.git
           * I have packaged the software as a snap for **personal use** but I have made the snap available for free.
-          * I do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
+          * I   do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
           * Report snap-specific bugs to me.
-          * I _DO_ use this snap. It _has passed ALL the provided tests_ on my system. I __do not__ track the latest version.
+          * I _DO_ use this snap. It _HAS BEEN TESTED_ on my system. I __do not__ track the latest version.
           * Packaging 'style' : binary for linux machines.
           * License refers to the original software, not the snapcraft 'code'.
-          * More info:
           * Run the following to rename the snap
-            ```sudo snap alias rjd-shapeit.ligate ligate```
-            ```sudo snap alias rjd-shapeit.phase-common phase_common```
-            ```sudo snap alias rjd-shapeit.phase-rare phase_rare```
-            ```sudo snap alias rjd-shapeit.simulate simulate```
-            ```sudo snap alias rjd-shapeit.switch switch```
-            ```sudo snap alias rjd-shapeit.xcftools xcftools```
+                ```sudo snap alias rjd-shapeit.ligate ligate```
+                ```sudo snap alias rjd-shapeit.phase-common phase_common```
+                ```sudo snap alias rjd-shapeit.phase-rare phase_rare```
+                ```sudo snap alias rjd-shapeit.simulate simulate```
+                ```sudo snap alias rjd-shapeit.switch switch```
+                ```sudo snap alias rjd-shapeit.xcftools xcftools```
+#          * More info:
 
 contact: https://github.com/RJDan/shapeit_snap
 website: https://github.com/RJDan/shapeit_snap
